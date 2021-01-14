@@ -1,0 +1,22 @@
+.exchange_box.col-sm-12
+  .card
+    .card-header.text-center Simule sua conversão
+    .card-block
+      = form_with url: "/convert", method: :get, id: 'exchange_form' do |f|
+        .local_currency
+          .form-group
+            %p.title Moeda Local
+            = f.select 'source_currency', options_for_select(currency_list, 'BRL'), class: 'form-control', id: 'source_currency'
+
+          .form-group
+            = f.number_field 'amount', id: 'amount', class: 'form-control', placeholder: 'Quantidade ($10)', step: 'any', required: true
+
+        .destination_currency
+          .form-group
+            %p.title Moeda Pretendida
+            = f.select 'target_currency', options_for_select(currency_list, 'EUR'), class: 'form-control', id: 'target_currency'
+
+          .form-group
+            %input#result.form-control{:name => 'result', :placeholder => "Resultado", :readonly => 'readonly', :type => 'text'}
+
+        = f.submit "CONVERTE", class:"btn btn-primary btn-exchange col-md-12"
