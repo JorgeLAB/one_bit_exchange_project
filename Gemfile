@@ -23,7 +23,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'rest-client'
 
-
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0'
@@ -47,3 +46,7 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'rubocop', require: false
+
+gem 'rubocop-rails', require: false
