@@ -14,7 +14,7 @@ class ExchangeService
 			value = get_exchange
 			(value * @amount).round(2)
 		rescue RestClient::ExceptionWithResponse => e
-			e.response
+			e
 		end
   end
 
