@@ -29,3 +29,4 @@ describe ExchangeService do
     expect(service_exchange).to eq expected_exchange
   end
 end
+
